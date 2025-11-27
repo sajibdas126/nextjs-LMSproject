@@ -16,11 +16,16 @@ const HeroSlider = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 3
+    slidesToScroll:3,
+    autoplay: true,
+     autoplaySpeed: 2000,
   };
 
     return (
-        <div className="slider-container">
+    <div className='container mx-auto w-11/12 py-30'>
+        <h1 className=' justify-center text-center bg-[#cdf0df] p-3 rounded-2xl text-2xl font-semibold text-[#2eca7f]'>Trusted Company Arround The World!</h1>
+      <div>
+            <div className="slider-container py-10">
       <Slider {...settings}>
         <div>
           <Image src={img1}></Image>
@@ -37,8 +42,19 @@ const HeroSlider = () => {
         <div>
           <Image src={img5}></Image>
         </div>
+         <div>
+          <Image src={img3}></Image>
+        </div>
+        <div>
+          <Image src={img4}></Image>
+        </div>
+        <div>
+          <Image src={img5}></Image>
+        </div>
      
       </Slider>
+    </div>
+      </div>
     </div>
     
     )

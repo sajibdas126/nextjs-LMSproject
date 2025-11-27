@@ -1,9 +1,18 @@
-import React from 'react'
+import getAllData from "../../../apiData/getAllData";
 
-const page = () => {
+export default async function Page() {
+  const posts = await getAllData();
+  console.log(posts); // now an array
+
   return (
-    <div>pages</div>
-  )
-}
+    <div>
+      <h1>All posts</h1>
 
-export default page
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
