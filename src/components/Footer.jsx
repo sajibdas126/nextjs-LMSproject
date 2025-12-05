@@ -8,7 +8,7 @@ import { GrMapLocation } from "react-icons/gr";
 
 const Footer = () => {
   return (
-    <div className='bg-blue-800'>
+    <div className='bg-blue-900 text-white'>
       <div className='grid md:grid-cols-4 items-center justify-center container mx-auto w-11/12 '>
       {/* div-1 */}
         <div className=''>
