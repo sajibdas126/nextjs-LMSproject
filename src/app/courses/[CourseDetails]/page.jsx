@@ -28,14 +28,15 @@ export default function CourseDetails() {
         alt={course.title}
         className="w-full h-60 object-cover rounded"
       />
-      <h1 className="text-4xl font-bold mt-5">{course.title}</h1>
-      <p className="text-gray-600 text-xl">Category: {course.category}</p>
+       <h2 className="font-semibold mt-3">{course.title}</h2>
+      <h1 className="text-xl  mt-5">{course.description}</h1>
+      <p className="text-gray-600 font-bold text-2xl">Instructor: {course.instructor}</p>
 
       <div className="mt-3 space-y-1 text-lg">
-        <p>Lessons: {course.lessons}</p>
-        <p>Duration: {course.duration}</p>
-        <p>Rating: {course.rating}</p>
-        <p>Level: {course.level}</p>
+        <p>language: {course.language}</p>
+        <p>Duration: {course.requirements}</p>
+        <p>requirements: {course.requirements}</p>
+        <p>students: {course.students}</p>
       </div>
     </div>
   );

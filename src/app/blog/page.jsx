@@ -1,34 +1,47 @@
-import Button from '@/components/Button'
-import Link from 'next/link'
-import React from 'react'
 
-const blog = () => {
-  const blogs =[{
-    id:1,
-    title:"Blog 1",
-    description:"Blog 1 description"
-  },
-{   
-    id:2,
-    title:"Blog 2",
-    description:"Blog 2 description"
-  }]
+"use client";
+import { useParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
+
+const Page = () => {
+  const params = useParams();
+  const id = params?.CourseDetails;
+
+  const [course, setCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!id) return;
+
+    fetch("/data/courses.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const found = data.find((item) => item.id === id);
+        setCourse(found);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, [id]);
+
+  if (loading)
+    return <p className="p-10 text-xl text-center">Loading Blog...</p>;
+
+  if (!course)
+    return (
+      <p className="p-10 text-xl text-center text-red-500">
+        Course Not Found
+      </p>
+    );
 
   return (
-    <div> 
-      
-      <ul>
-        {blogs.map(blog => 
-        <li key={blog.id} >
-         <Link href={`/blog/${blog.id}`}> {blog.title}</Link>
-          </li>)}
-      </ul>
-       
-       <Button></Button>
-
+    <div className="p-10">
+      <h1 className="text-3xl font-bold">{course.title}</h1>
+      <p className="mt-3">{course.description}</p>
     </div>
-  
-  )
-}
+  );
+};
 
-export default blog
+export default Page;
