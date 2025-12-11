@@ -5,7 +5,7 @@ const BlogSingle = ({ params }) => {
 
   return (
     <div className="mt-6">
-      The blog id is: {id}
+      The blog id is: 
     </div>
   );
 };
