@@ -16,7 +16,7 @@ export default function Home() {
     <Achievement></Achievement>
     <Slider></Slider>
     <Bestfeatures></Bestfeatures>
-
+   
    </div>
   );
 }

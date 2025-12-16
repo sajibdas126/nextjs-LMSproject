@@ -15,7 +15,6 @@ const Navber = () => {
       {/* Fixed Navbar */}
       <div className="fixed top-0 left-0 w-full bg-white shadow z-50">
         <div className="container mx-auto w-11/12 flex justify-between items-center py-5">
-
           {/* Logo */}
           <div>
             <img className="w-28" src={pic.src} alt="logo" />
@@ -34,8 +33,16 @@ const Navber = () => {
           <div className="hidden md:flex items-center gap-3">
             <CiSearch size={25} />
             <LiaLuggageCartSolid size={25} />
-            <button className="text-white font-bold rounded-2xl px-5 py-2 bg-[#2eca7f]">Login</button>
-            <button className="text-white font-bold rounded-2xl px-5 py-2 bg-[#2eca7f]">Sign Up</button>
+            <Link href={"/login"}>
+              <button className="cursor-pointer text-white font-bold rounded-2xl px-5 py-2 bg-[#2eca7f]">
+                Login
+              </button>
+            </Link>
+            <Link href={"/signup"}>
+              <button className="cursor-pointer text-white font-bold rounded-2xl px-5 py-2 bg-[#2eca7f]">
+                Sign Up
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -51,13 +58,22 @@ const Navber = () => {
         {/* Mobile Dropdown Menu */}
         {open && (
           <div className="md:hidden bg-white shadow-md px-6 py-4 space-y-4 font-semibold">
-
             <div className="flex flex-col items-center gap-3">
-              <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-              <Link href="/pages" onClick={() => setOpen(false)}>Pages</Link>
-              <Link href="/courses" onClick={() => setOpen(false)}>Courses</Link>
-              <Link href="/blog" onClick={() => setOpen(false)}>Blog</Link>
-              <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
+              <Link href="/" onClick={() => setOpen(false)}>
+                Home
+              </Link>
+              <Link href="/pages" onClick={() => setOpen(false)}>
+                Pages
+              </Link>
+              <Link href="/courses" onClick={() => setOpen(false)}>
+                Courses
+              </Link>
+              <Link href="/blog" onClick={() => setOpen(false)}>
+                Blog
+              </Link>
+              <Link href="/contact" onClick={() => setOpen(false)}>
+                Contact
+              </Link>
             </div>
 
             <div className="flex justify-between">
@@ -67,8 +83,16 @@ const Navber = () => {
               </div>
 
               <div className="flex gap-3 pt-4">
-                <button className="text-white font-bold rounded-2xl px-5 py-2 bg-[#2eca7f]">Login</button>
-                <button className="text-white font-bold rounded-2xl px-5 py-2 bg-[#2eca7f]">Sign Up</button>
+                <Link href={"/login"}>
+                  <div className="  cursor-pointer text-white font-bold rounded-2xl px-5 py-2 bg-[#2eca7f] ">
+                    Login
+                  </div>
+                </Link>
+                <Link href={"/signup"}>
+                  <div className="cursor-pointer text-white font-bold rounded-2xl px-5 py-2 bg-[#2eca7f]">
+                    Sign Up
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
